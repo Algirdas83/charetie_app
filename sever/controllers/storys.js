@@ -5,8 +5,24 @@ import upload from '../middlevear/multer.js'
 const router = express.Router()
 
 
+router.get('/', async (req, res) => {
+
+    try {
+
+        const storys = await db.Storys.findAll()
+
+        res.json(storys)
+    } catch (error) {
+
+        console.log(error);
+        res.status(500).send('Ivyko klaida issaugant duomenis ')
+        
+    }
+})
+
+
 router.post('/new', upload.single('photo'), async(req, res) => {
-    console.log('Ar ATKELIAUJA FOTO',req.file);
+    
 try {
 
     if(req.file)

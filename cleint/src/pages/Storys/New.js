@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useContext, useEffect} from "react"
+import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
 const NewStory = () => {
@@ -10,6 +11,8 @@ const [story, setStory] = useState({
     photo:'',
     amount_donation:''
 })
+
+const navigate = useNavigate()
 
 const handleForm = (e) => {
 
@@ -32,6 +35,9 @@ const handleForm = (e) => {
     axios.post('/api/storys/new', formData)
     .then(resp => {
 
+        setTimeout(() => {
+          navigate('/')
+        }, 1000)
         // setAlert({
         //     message : resp.data,
         //     status : 'success'
