@@ -33,6 +33,7 @@ try {
     const storys = await db.Storys.create(req.body)
 
     res.status(200).send('Yrasas sekmingai isaugotas')
+
 } catch (error) {
     console.log(error);
 

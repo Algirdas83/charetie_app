@@ -19,30 +19,27 @@ const Main = () => {
 
 
   },[])
-
-
+ 
   return (
-    <div> 
-      {storys && storys.map(data => {
-          return(
-            
-            <ul key={data.id}>
-              <li><img src={data.photo} alt='nuotrauka'  width='150px'/>
-              <img src={data.photo} alt="" width="20%" />
-              
-              </li>
-              <li>{data.story}</li>
-               <li>Planuojama surinkti auku {data.amount_donation} Eur</li>
-           </ul>
-            
-            
+   <>
+    {storys && storys.map(data => {
 
-          )   
 
-      })}
+        return(
+          <ul key={data.id}>
+            <li>{data.story}</li>
+            <li> <img src={data.photo} alt="noutrauka" /> </li>
+          </ul>
+
+        )
+    } 
+        )}
+   
+   </>
+     
       
       
-     </div>
+     
   )
 }
 
