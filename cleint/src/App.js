@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 
 // import Header from './components/Header.js';
+
 import Main from './pages/Main/Main.js'
 import NewStory from './pages/Storys/New.js'
 
@@ -17,7 +18,7 @@ function App() {
   return (
    
        <BrowserRouter>
-       {/* <Header/> */}
+        
        <div className="container">
        <Routes>
           <Route path='/' element = {<Main/>}/>

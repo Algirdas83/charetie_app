@@ -10,6 +10,8 @@ const Main = () => {
 
     axios.get(`/api/storys/`)
     .then(resp => {
+
+      console.log(resp.data);
       setStorys(resp.data)
 
     })
@@ -23,11 +25,17 @@ const Main = () => {
     <div> 
       {storys && storys.map(data => {
           return(
-            <ul>
-              <li><img src={data.photo} alt="photo" /></li>
-            <li>{data.story}</li>
-            <li>Planuojama surinkti auku {data.amount_donation} Eur</li>
+            
+            <ul key={data.id}>
+              <li><img src={data.photo} alt='nuotrauka'  width='150px'/>
+              <img src={data.photo} alt="" width="20%" />
+              
+              </li>
+              <li>{data.story}</li>
+               <li>Planuojama surinkti auku {data.amount_donation} Eur</li>
            </ul>
+            
+            
 
           )   
 
