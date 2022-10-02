@@ -36,7 +36,7 @@ const handleForm = (e) => {
     .then(resp => {
 
         setTimeout(() => {
-          navigate('/')
+          navigate('/main')
         }, 1000)
         // setAlert({
         //     message : resp.data,
@@ -65,22 +65,24 @@ const handleForm = (e) => {
 
 
   return (
-    <div>
-        <form onSubmit={(e) => handleSubmit(e)} >
-            <div className='mb-3'>
-                 <label className='form-label'>Your story text</label>
+    <div className='row justify-content-center'>
+        <form className='col-4' onSubmit={(e) => handleSubmit(e)} >
+            <div>
+                 <label className='form-label mt-3'>Your story text</label>
                 <input className='form-control' type="text" name='story' onChange={handleForm} />
             </div>
-            <div className='mb-3'>
-                <label className='form-label'>Photo</label>
+            <div>
+                <label className='form-label mt-3'>Photo</label>
                 <input className='form-control' type="file" name='photo'  onChange={handleForm} />
             </div>
-            <div className='mb-3'>
-                <label className='form-label'>Donotion sum</label>
+            <div>
+                <label className='form-label mt-3'>Donotion sum</label>
                 <input className='form-control' type="number" name='amount_donation'  onChange={handleForm} />
             </div>
-
-            <button>Ikelti</button>
+            <div className='d-grid mt-2'>
+              <button className='btn btn-primary'>Ikelti</button>
+            </div>
+            
             
         </form>
 

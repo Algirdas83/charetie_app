@@ -28,7 +28,7 @@ const Main = () => {
         return(
           <ul key={data.id}>
             <li>{data.story}</li>
-            <li> <img src={data.photo} alt="noutrauka" /> </li>
+            <li> <img className='rounded img-fluid img-thumbnail' src={data.photo} alt="noutrauka" width='300px' /> </li>
           </ul>
 
         )

@@ -16,7 +16,7 @@ app.use(cors())
 app.use(express.json())
 
 //Failu perdavimui is statinės direktorijos
-app.use('/uploads', express.static('uploads'))
+app.use('/uploade', express.static('uploade'))
 
 //Duomenų priėmimui POST metodu
 app.use(express.urlencoded({ extended: true }))
