@@ -38,7 +38,7 @@ const handleForm = (e) => {
     .then(resp => {
 
         setTimeout(() => {
-          navigate('/main')
+          navigate('/')
         }, 1000)
         // setAlert({
         //     message : resp.data,

@@ -2,3 +2,22 @@
     max-width: 100px;
     width: 100%;
 } */
+
+.story-text{
+    height: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    
+}
+.card-link{
+    color: black;
+}
+
+.card-link:hover {
+    color: black;
+}
+
+
+.rised-sum{
+    font-weight: 700;
+}

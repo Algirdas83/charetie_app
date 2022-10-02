@@ -21,7 +21,7 @@ function App() {
         <Header/>
        <div className="container">
        <Routes>
-          <Route path='/main' element = {<Main/>}/>
+          <Route path='/' element = {<Main/>}/>
           <Route path='story-new' element = {<NewStory/>}/>
          
           

@@ -1,6 +1,7 @@
 import React from 'react'
 import './Main.css'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 
 const Main = () => {
@@ -32,16 +33,18 @@ const Main = () => {
          
 
 
-          
-          <div className=" col-2 card m-2 p-0 " >
+        
+          <Link className="card-link col-2 card m-2 p-0 " >
            <img className='main-image card-img-top img-fluid ' src={data.photo} alt="noutrauka"  />
             <div className="card-body">
-              <h5 className="card-title">{data.story_name}</h5>
-              <p className="card-text">{data.story}</p>
-              <p className="card-text">{data.amount_donation} Eur</p>
-              {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+              <h5 className="card-title text-warning fw-bold">{data.story_name}</h5>
+              <p className="story-text card-text">{data.story}</p>
+              <p className="card-text"><span className='rised-sum'>{data.amount_donation} Eur</span> </p>
+              <p> jau surinkta suma</p>
+              <p> Likusi iki tikslo suma</p>
+             
             </div>
-          </div>
+          </Link>
        
           
 

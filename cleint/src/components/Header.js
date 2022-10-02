@@ -11,7 +11,7 @@ const Header = () => {
 
           <nav className='navbar navbar-expand-lg navbar-dark bg-warning p-3'>
             <div className='container-fluid'>
-              <h3 className='navbar-brand fs-3'> <Link to='/main'>Donator</Link> </h3>
+              <h3 className='navbar-brand fs-3'> <Link to='/'>Donator</Link> </h3>
             </div>
             
             <ul className='navbar-nav'>
