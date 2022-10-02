@@ -6,7 +6,7 @@ import axios from 'axios'
 const NewStory = () => {
 
 const [story, setStory] = useState({
-
+    story_name:'',
     story:'',
     photo:'',
     amount_donation:''
@@ -20,6 +20,8 @@ const handleForm = (e) => {
     setStory({...story, [e.target.name]: e.target.name === 'photo'? e.target.files[0] : e.target.value})
 
   }
+
+  
 
   const handleSubmit = (e) => {
 
@@ -65,22 +67,25 @@ const handleForm = (e) => {
 
 
   return (
-    <div className='row justify-content-center'>
-        <form className='col-4' onSubmit={(e) => handleSubmit(e)} >
+    <div className='row justify-content-center mt-3'>
+      <h2 className='text-center'>Nauja istorija</h2>
+        <form className='story-new-form col-4 p-3 border  border-2  rounded-2  bg-light ' onSubmit={(e) => handleSubmit(e)} >
             <div>
-                 <label className='form-label mt-3'>Your story text</label>
-                <input className='form-control' type="text" name='story' onChange={handleForm} />
+              <input className='form-control mt-3' type="text" name='story_name' placeholder='Jūsų istorijos pavadinimas' onChange={handleForm} />
             </div>
             <div>
-                <label className='form-label mt-3'>Photo</label>
-                <input className='form-control' type="file" name='photo'  onChange={handleForm} />
+               <textarea textarea class="form-control mt-3" name="story" onChange={handleForm} cols="30" rows="5" placeholder='Istorijos tekstas'></textarea>
             </div>
             <div>
-                <label className='form-label mt-3'>Donotion sum</label>
-                <input className='form-control' type="number" name='amount_donation'  onChange={handleForm} />
+                
+                <input className='form-control mt-3' type="file" name='photo' placeholder='Jūsų nuotrauka'  onChange={handleForm} />
             </div>
-            <div className='d-grid mt-2'>
-              <button className='btn btn-primary'>Ikelti</button>
+            <div>
+               
+                <input className='form-control mt-3' type="number" name='amount_donation' placeholder='Suma kuria siekiama surinkti'  onChange={handleForm} />
+            </div>
+            <div className='d-grid mt-3'>
+              <button className='btn btn-success'>Ikelti</button>
             </div>
             
             

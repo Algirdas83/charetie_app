@@ -8,3 +8,10 @@ a {
 a:hover {
     color: antiquewhite;
 }
+
+
+.story-new-form{
+
+    border: #e9ecef solid 2px;
+    padding: 30px 10px 25px 10px;
+}

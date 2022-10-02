@@ -43,7 +43,7 @@ try {
 // db.Saloons.hasMany(db.Services)
 // db.Services.belongsTo(db.Saloons)
 
-    await sequelize.sync({ alter: false })
+    await sequelize.sync({ alter: true })
     
 } catch (error) {
 

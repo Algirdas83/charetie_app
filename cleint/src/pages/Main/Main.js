@@ -1,4 +1,5 @@
 import React from 'react'
+import './Main.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
@@ -22,19 +23,32 @@ const Main = () => {
  
   return (
    <>
+    <div className='row justify-content-center mt-5'>
     {storys && storys.map(data => {
 
 
         return(
-          <ul key={data.id}>
-            <li>{data.story}</li>
-            <li> <img className='rounded img-fluid img-thumbnail' src={data.photo} alt="noutrauka" width='300px' /> </li>
-          </ul>
+
+         
+
+
+          
+          <div className=" col-2 card m-2 p-0 " >
+           <img className='main-image card-img-top img-fluid ' src={data.photo} alt="noutrauka"  />
+            <div className="card-body">
+              <h5 className="card-title">{data.story_name}</h5>
+              <p className="card-text">{data.story}</p>
+              <p className="card-text">{data.amount_donation} Eur</p>
+              {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
+            </div>
+          </div>
+       
+          
 
         )
     } 
         )}
-   
+   </div>
    </>
      
       
