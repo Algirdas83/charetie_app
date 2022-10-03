@@ -34,7 +34,7 @@ const Main = () => {
 
 
         
-          <Link className="card-link col-2 card m-2 p-0 " >
+          <Link to={`donation/${data.id}`} className="card-link col-2 card m-2 p-0 " >
            <img className='main-image card-img-top img-fluid ' src={data.photo} alt="noutrauka"  />
             <div className="card-body">
               <h5 className="card-title text-warning fw-bold">{data.story_name}</h5>

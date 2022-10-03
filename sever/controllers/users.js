@@ -41,7 +41,7 @@ router.post('/login', async (req, res) => {
     try {
 
      const user = await db.Users.findOne({where:{email: req.body.email}})
-
+        console.log('Testas ligono', req.body);
      if(!user)
      return res.status(401).send('Toks vartotojas nerastas')
 
@@ -51,10 +51,10 @@ router.post('/login', async (req, res) => {
 
        req.session.user = {
         id: user.id,
-        name: user.name,
+        first_name: user.name,
         last_name: user.last_name,
-        email: user.email,
-        role: user.role
+        email: user.email
+        // role: user.role
 
        }
 
