@@ -1,15 +1,32 @@
 import express from 'express'
 import db from '../database/connect.js'
 import upload from '../middlevear/multer.js'
+ import {newStoryValidator} from '../middlevear/validate.js'
 
 const router = express.Router()
+
+// router.get('/test-asoc' ,async(req, res) => {
+
+   
+//     try {
+        
+//         res.send('Vikas ok su testiniu keliu')
+
+//     } catch (error) {
+//         console.log(error)
+//         res.status(500).send('Ivyko servako klaida testuojant')
+//     }
+// })
+
 
 
 router.get('/', async (req, res) => {
 
     try {
 
-        const storys = await db.Storys.findAll()
+        const storys = await db.Storys.findAll({
+            include: db.Donations
+        })
 
         res.json(storys)
     } catch (error) {
@@ -21,7 +38,7 @@ router.get('/', async (req, res) => {
 })
 
 
-router.post('/new', upload.single('photo'), async(req, res) => {
+router.post('/new', upload.single('photo'), newStoryValidator,  async(req, res) => {
     
 try {
 

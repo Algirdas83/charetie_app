@@ -11,7 +11,7 @@ const Login = () => {
         password:''
     })
 
-    const {setAlert} = useContext(MainContext)
+    const {setAlert, setRefresh} = useContext(MainContext)
 
     const navigate = useNavigate()
 
@@ -31,14 +31,15 @@ const Login = () => {
            
             setTimeout(() => {
               navigate('/')
-            }, 1000)
+            }, 2000)
 
             setAlert({
                 message : resp.data.message,
                 status : 'success'
             })
             // window.scrollTo(0,0)
-    
+            
+            setRefresh((prevState) => !prevState)
             
     
         })

@@ -7,10 +7,6 @@ const Donations = (sequelize) => {
             type: DataTypes.STRING, //=VARCHAR(255)
             allowNull: false //neleidžiamas tuščias laukas - Standartinė reikšmė true
         },
-        donator_last_name: {
-            type: DataTypes.BIGINT, //=VARCHAR(255)
-            allowNull: false //neleidžiamas tuščias laukas - Standartinė reikšmė true
-        },
         donated_sum: {
             type: DataTypes.BIGINT, //= TEXT
             allowNull: false

@@ -18,7 +18,7 @@ const Alert = () => {
                         message:'',
                         
                     })
-                }, 1000)
+                }, 2000)
                 
             }, [alert])
 

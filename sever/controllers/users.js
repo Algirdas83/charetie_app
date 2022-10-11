@@ -1,6 +1,7 @@
 import express from 'express'
 import db from '../database/connect.js'
 import bcrypt from 'bcrypt'
+import {loginValidator} from '../middlevear/validate.js'
 
 const router = express.Router()
 
@@ -36,23 +37,22 @@ router.post ('/register', async (req, res) => {
 })
 
 
-router.post('/login', async (req, res) => {
+router.post('/login', loginValidator, async (req, res) => {
 
     try {
 
      const user = await db.Users.findOne({where:{email: req.body.email}})
         console.log('Testas ligono', req.body);
+        
      if(!user)
      return res.status(401).send('Toks vartotojas nerastas')
 
      if(await bcrypt.compare(req.body.password, user.password )) {
 
-       req.session.loggedIn = true
+    //    req.session.loggedIn = true
 
        req.session.user = {
         id: user.id,
-        first_name: user.name,
-        last_name: user.last_name,
         email: user.email
         // role: user.role
 
@@ -69,6 +69,18 @@ router.post('/login', async (req, res) => {
         res.status(500).send('Ivyko serverio klaida')
     }
     
+})
+
+router.get('/auth-check', (req,res) => {
+
+    try {
+        res.json(req.session.user)
+
+    } catch (error) {
+        console.log(error)
+        res.send('Ivyko serverio klaida')
+    }
+
 })
 
 

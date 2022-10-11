@@ -18,8 +18,11 @@ const Storys = (sequelize) => {
         amount_donation: {
             type: DataTypes.BIGINT, //= TEXT
             allowNull: false
-        }
-       
+        },
+        raised_donation: {
+            type: DataTypes.BIGINT, //= TEXT
+            
+        },
     }
 
     return sequelize.define('storys', Schema)

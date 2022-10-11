@@ -2,7 +2,7 @@
 import express from 'express'
 import cors from 'cors'
 import session from 'express-session'
-import {Users, Storys} from './controllers/index.js'
+import {Users, Storys, Donations} from './controllers/index.js'
 
 const app = express()
 
@@ -39,6 +39,8 @@ app.use(session({
  app.use('/api/users/',Users  )
 
  app.use('/api/storys/',Storys )
+
+ app.use('/api/donators/', Donations)
 
 
 
