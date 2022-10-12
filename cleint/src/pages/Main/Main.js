@@ -16,7 +16,7 @@ const Main = () => {
 
    const [refresh, setRefresh] = useState(false)
 
-  const {setAlert} = useContext(MainContext)
+  const {setAlert, userData} = useContext(MainContext)
 
   useEffect(() => {
 
@@ -30,7 +30,7 @@ const Main = () => {
     .catch(error => console.log(error))
 
 
-  },[refresh])
+  },[refresh,])
 
   ///// handle imput
   const handleInput = (e) => {

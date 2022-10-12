@@ -71,6 +71,14 @@ router.post('/login', loginValidator, async (req, res) => {
     
 })
 
+router.get('/logout', (req, res) => {
+
+    req.session.destroy()
+
+    res.send('Jus sekmingai atsijungete')
+})
+
+
 router.get('/auth-check', (req,res) => {
 
     try {

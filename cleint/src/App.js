@@ -16,6 +16,7 @@ import Main from './pages/Main/Main.js';
 import NewStory from './pages/Storys/New.js';
 import Register from './pages/Register/Register.js';
 import Login from './pages/Login/Login.js';
+import Logout from './pages/Logout/Logout.js';
 
 
 
@@ -30,7 +31,7 @@ function App() {
   const [refresh, setRefresh] = useState(false)
   const [userData, setUserData] = useState({})
 
-  const contextValues = { alert, setAlert, userData, setRefresh }
+  const contextValues = { alert, setAlert, userData, setUserData, setRefresh }
 
   useEffect (() => {
     axios.get('/api/users/auth-check/')
@@ -56,7 +57,13 @@ function App() {
         <Alert/>
        <Routes>
           <Route path='/' element = {<Main/>}/>
-          <Route path='story-new' element = {<NewStory/>}/>
+          { userData.id &&   
+          <>
+            <Route path='story-new' element = {<NewStory/>}/> 
+           <Route path='logout' element = {<Logout/>}/> 
+          </>
+          }
+         
           <Route path='register' element = {<Register/>}/>
           <Route path='login' element = {<Login/>}/>
           
